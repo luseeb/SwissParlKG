@@ -1,9 +1,9 @@
 from langchain.chains import GraphCypherQAChain
 from langchain.prompts import PromptTemplate
+from rag.llm import llm
+from rag.graph import graph
 
-from llm import llm
-from graph import graph
-
+#Prompt for cypher generation tool
 CYPHER_GENERATION_TEMPLATE = """
 Du bist ein Neo4j Entwicklungsexperte, welcher Benutzerfragen in Cypher übsersetzt um Fragen über Schweizer Politik zu beantworten.
 Konvertiere die Benutzerfragen basierend auf dem zur Verfügung gestellten Schema.
@@ -18,11 +18,13 @@ Schema: {schema}
 Question: {question}
 """
 
+#Initiate prompt template for cypher generation tool
 cypher_generation_prompt = PromptTemplate(
     template=CYPHER_GENERATION_TEMPLATE,
     input_variables=["schema", "question"],
 )
 
+#Initiate cygher generation tool
 cypher_qa = GraphCypherQAChain.from_llm(
     llm,        
     graph=graph,
