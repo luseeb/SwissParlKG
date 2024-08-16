@@ -2,7 +2,7 @@ from utils.neo4j_python_connection import Neo4jConnection
 import os
 import pandas as pd
 import os
-from utils import clean_text
+from utils.utils import clean_text
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Neo4jVector
 from langchain_openai import OpenAIEmbeddings
