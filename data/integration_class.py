@@ -16,7 +16,7 @@ read_db_wiki = "wiki-v1"
 #Define database for final knowledge graph
 write_db = "swissparlgraph"
 
-
+#Integrate data from lobbywatch with data from parlamentsdienste
 def integrate_person_canton_link(db_read, db_write):
     query = '''
             MATCH (p:Parlamentarier)-[l:WOHNT_IM_KANTON]->(k:Kanton)
@@ -340,7 +340,7 @@ def integrate_branche_kommission_link(db_read, db_write):
             '''
     return conn.query(query, parameters = {'rows':df.to_dict('records')}, db=db_write)
 
-
+#Integrate data from wikipedia with data from parlamentsdienste
 def integrate_wikipedia_link(db_read, db_write):
     query = '''
                 MATCH (w)
@@ -430,3 +430,5 @@ def integrate_wikipedia_link(db_read, db_write):
     for query in queries:
         conn.query(query, parameters = {'rows':df.to_dict('records')}, db=db_write)
     return print("Wikipedia integration import finished")
+
+
