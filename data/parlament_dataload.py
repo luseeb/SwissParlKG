@@ -9,7 +9,7 @@ conn = Neo4jConnection(uri=os.getenv('NEO4J_url'),
                        pwd=os.getenv('NEO4J_pwd'))
 
 #Define database
-db = "parlament-v2"
+db = "swissparlgraph"
 
 #Set database constraints to ensure uniqueness of entities
 conn.query('CREATE CONSTRAINT person IF NOT EXISTS FOR (p:Person) REQUIRE p.Personennummer IS UNIQUE',
