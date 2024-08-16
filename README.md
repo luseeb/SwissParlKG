@@ -18,6 +18,13 @@ Die Dateien für die Datenintegration sind ebenfalls unter SwissParlKG/data/ ges
 
 ## Retrieval Augmented Generation
 Der Unterordner SwissParlKG/rag/ beinhaltet die Dateien für die RAG-Implementierung:
-* *llm.py, graph.py*: 
+* *llm.py, graph.py*: Diese Dateien dienen der Initiierung des LLM und des Knowledge Graphen.
+* *agent_iteration1.py, agent_iteration2.py*: Diese Dateien beinhalten den Code und die Anweisungen für die Erstellung des LangChain-Agenten für die jewweilige Iteration.
+* *tools/cypher.py, tools/cypher_finetuned.py*: In diesen Dateien werden die Werkzeuge für die Cypher-Generierung erstellt.
+* *tools/vector.py, tools/vector_local.py*: Diese beiden Dateien dienen der Etablierung der Werkzeuge für die Vektorsuche.
 
 ## Evaluation
+* Im Hauptordner ist die Datei *chatbot.py* abgespeichert, welche für den Aufbau des Streamlit Chatbot-Frontend verantwortlich ist. Mit dieser Web-basierten Applikation kann die RAG-Implementierung live mit einzelnen Queries getestet werden.
+* Die Datei *rag/running_evaluation.py* dient schliesslich der automatisierten Abfrage von Informationen aus dem Knowledge Graphen.
+* Der Unterordner *evaluation/questions/* enthält den Fragekatalog sowie die Konversationen, welche für die Evaluierung der RAG-Implementierung verwendet wurden.
+* Der Unterordner *evaluation/answers/* enthält die Resultate der Evaluierung.
