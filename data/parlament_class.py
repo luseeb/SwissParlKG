@@ -1,6 +1,6 @@
 import swissparlpy as spp
 import pandas as pd
-from neo4j_python_connection import Neo4jConnection
+from utils.neo4j_python_connection import Neo4jConnection
 import os
 from utils.utils import clean_text
 from langchain.text_splitter import CharacterTextSplitter
