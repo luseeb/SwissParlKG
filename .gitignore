@@ -1,0 +1,5 @@
+pyenv*
+.env
+.vscode
+.streamlit*
+embeddings.csv
