@@ -1,7 +1,6 @@
-
 import os
-from neo4j_python_connection import Neo4jConnection
-import PD_class as pc
+from utils.neo4j_python_connection import Neo4jConnection
+import parlament_class as pc
 from datetime import datetime
 
 #Initiate Neo4j connection
