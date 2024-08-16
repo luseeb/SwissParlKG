@@ -1,5 +1,5 @@
 import streamlit as st
-from agent2 import generate_response
+from rag.agent_iteration2 import generate_response
 
 #Streamlit helper function
 def write_message(role, content, save = True):
